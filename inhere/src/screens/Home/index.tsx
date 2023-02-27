@@ -12,6 +12,9 @@ export  function Home() {
     
   }
 
+  function handleParticipantRemove(name: string) {
+    console.log(`Você clicou em remover o participante ${name}`);
+  }
 
   return (
     <View style={styles.container}>
@@ -37,9 +40,12 @@ export  function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="Daniel Sousa"/>
-      <Participant name="Andreane"/>
-      <Participant name="Marlene"/>
+      <Participant 
+        name="Daniel Sousa" 
+        onRemove={()=> handleParticipantRemove("Daniel")}
+        
+      />
+      
     </View>
   )
 }
